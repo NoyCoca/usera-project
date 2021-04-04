@@ -7,6 +7,7 @@ class User {
         this.email = email;
         this.phone = phone;
         this.picture = picture;
+    
     }
 }
 
