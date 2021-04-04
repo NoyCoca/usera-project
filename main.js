@@ -117,7 +117,7 @@ function sandUserInfo() {
         let user = new User(age.value, firstname.value, lastname.value, email.value, phone.value, "http://placehold.it/32x32")
         usersArray.push(user)
         maininfo.innerHTML = `
-        <h1> User added successfully </h1>
+        <h1> User added successfully</h1>
         <button type="button" class="btn btn-primary" onclick="printUsersCards()">back to users</button>`}
 }
 
