@@ -11,7 +11,7 @@ class User {
     }
 }
 
-const MAINAPI = "https://next.json-generator.com/api/json/get/NJ-UoW2q";
+const MAINAPI = "https://next.json-generator.com/api/json/get/NJ-UoW2Xq";
 function getUsers() {
     return fetch(MAINAPI)
         .then(res => res.json())
