@@ -1,4 +1,3 @@
-// {"_id":"605acace98de45687c4c6279","index":9,"picture":"http://placehold.it/32x32","age":26,"name":{"first":"Guzman","last":"Dillon"},"email":"guzman.dillon@undefined.ca","phone":"+1 (857) 407-2403"}
 class User {
     constructor(age, firstName, lastName, email, phone, picture) {
         this.age = age;
