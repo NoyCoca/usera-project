@@ -11,7 +11,7 @@ class User {
     }
 }
 
-const MAINAPI = "https://next.json-generator.com/api/json/get/NJ-UoW2Xq";
+const MAINAPI = "https://next.json-generator.com/api/json/get/NJ-UoW2q";
 function getUsers() {
     return fetch(MAINAPI)
         .then(res => res.json())
@@ -43,6 +43,10 @@ async function printUsersCards() {
     </div> `
                 })
             })
+    }
+    catch(rej){
+        maininfo.innerHTML = `<h1> Sorry there is a problem.
+                              <p> Please try again later :) </p> </h1>`
     }
     finally {
         gif.src = ""
