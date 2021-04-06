@@ -6,7 +6,7 @@ class User {
         this.email = email;
         this.phone = phone;
         this.picture = picture;
-    
+
     }
 }
 
@@ -20,18 +20,17 @@ let usersArray = []
 async function printUsersCards() {
     try {
         gif.src = "https://cdn.dribbble.com/users/1415337/screenshots/10781083/loadingdots2.gif"
-        await getUsers()
-            .then(res => {
-                if (usersArray.length < 10) {
-                    res.forEach(user => {
-                        user = new User(user.age, user.name.first, user.name.last, user.email, user.phone, user.picture)
-                        usersArray.push(user)
-                    })
-                }
-                maininfo.innerHTML = `<div id="userscards"></div>`
-                usersArray.forEach(user => {
-                    userscards.innerHTML +=
-                        `<div class="card" style="width:400px" >
+        let apiUserInfo = await getUsers()
+        if (usersArray.length < 10) {
+            apiUserInfo.forEach(user => {
+                user = new User(user.age, user.name.first, user.name.last, user.email, user.phone, user.picture)
+                usersArray.push(user)
+            })
+        }
+        maininfo.innerHTML = `<div id="userscards"></div>`
+        usersArray.forEach(user => {
+            userscards.innerHTML +=
+                `<div class="card" style="width:400px" >
     <img class="card-img-top" src=${user.picture}>
     <div class="card-body">
     <h2>${user.firstName} ${user.lastName}</h2>
@@ -40,12 +39,13 @@ async function printUsersCards() {
     <p class="card-text"> email: ${user.email} </p>
     <a href= "http://127.0.0.1:5501/user.html" class="btn btn-primary" id="${user.phone}" onclick="userNewPage(event)"> see propile</a>
     </div> `
-                })
-            })
+        })
+
     }
-    catch(rej){
+    catch (rej) {
         maininfo.innerHTML = `<h1> Sorry there is a problem.
                               <p> Please try again later :) </p> </h1>`
+                              console.log(rej)
     }
     finally {
         gif.src = ""
