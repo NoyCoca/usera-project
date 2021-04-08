@@ -1,5 +1,5 @@
+let user =JSON.parse( localStorage.getItem("user"));
 
-let user =JSON.parse( localStorage.getItem("user"))
 userInfo.innerHTML =  `
 <header> 
 <h1>${user.firstName} ${user.lastName}</h1>

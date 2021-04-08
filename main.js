@@ -37,7 +37,7 @@ async function printUsersCards() {
     <p class="card-text"> age: ${user.age} </p>
     <p class="card-text"> phone: ${user.phone}</p>
     <p class="card-text"> email: ${user.email} </p>
-    <a href= "http://127.0.0.1:5501/user.html" class="btn btn-primary" id="${user.phone}" onclick="userNewPage(event)"> see propile</a>
+    <a href= "#" class="btn btn-primary" id="${user.phone}" onclick="userNewPage(event)"> see propile</a>
     </div> `
         })
 
@@ -130,7 +130,8 @@ function userNewPage(event) {
     let userPage = usersArray.find(user => {
         return user.phone == userId;
     });
-    localStorage.setItem("user", JSON.stringify(userPage))
+    localStorage.setItem("user", JSON.stringify(userPage));
+    open("http://127.0.0.1:5500/user.html")
 }
 
 // function searchUser() {
@@ -138,4 +139,3 @@ function userNewPage(event) {
 //         user.firstName == Search.value;
 // })
 //    }
-
