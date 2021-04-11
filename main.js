@@ -37,7 +37,7 @@ async function printUsersCards() {
     <p class="card-text"> age: ${user.age} </p>
     <p class="card-text"> phone: ${user.phone}</p>
     <p class="card-text"> email: ${user.email} </p>
-    <a href= "https://127.0.0.1:5501/user.html" class="btn btn-primary" id="${user.phone}" onclick="userNewPage(event)"> see propile</a>
+    <a href= "http://127.0.0.1:5501/user.html" class="btn btn-primary" id="${user.phone}" onclick="userNewPage(event)"> see propile</a>
     </div> `
         })
 
